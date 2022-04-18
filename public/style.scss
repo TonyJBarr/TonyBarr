@@ -1,0 +1,80 @@
+// Reset default styles
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
+body { line-height: 1;}
+ol,ul { list-style: none;}
+blockquote,q { quotes: none;}
+blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+//  ========= 
+$oxford-blue: rgb(16, 29, 66);
+$columbia-blue: rgb(188, 212, 222);
+$copper-rose: rgb(155, 106, 108);
+$skobeloff: rgb(15, 113, 115);
+$celadon-blue: rgb(0, 126, 167);
+$simple-transition: all 0.5s ease-in-out;
+body{
+    background-color: $columbia-blue;
+}
+
+
+// Navigation
+.nav-logo{
+    font-weight: bold;
+    font-size: 60px;
+    color: $oxford-blue;
+    font-family: 'Square Peg', cursive;  
+    // -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+
+  }
+  .logo-hover:hover nav{
+        color: $celadon-blue;
+    }
+  .nav-logo span {
+      display: inline-block;
+      animation: nav-logo 1.2s infinite;
+      animation-delay: calc(.1s * var(--i));
+      
+  }
+  @keyframes nav-logo {
+    40%,100% {
+        transform: translateY(0)
+      }
+    20% {
+      transform: translateY(-5px)
+    }
+  }
+
+nav{
+    
+    padding: 0 0.5rem 5rem;
+    border-radius: 1%;
+    margin-bottom: 1rem;
+    background-color: $skobeloff;
+}
+menu{
+    margin-top: 1rem;
+    float: right;
+    font-size: 1.5rem;
+    
+}
+menu-item .nav-links{
+    font-family: arial;
+    color: $oxford-blue;
+    transition: $simple-transition;
+    padding: 1rem;
+    text-decoration: none;
+    
+}
+.nav-links:hover{
+    color: $copper-rose;
+    
+    
+}
+nav .nav-logo{
+   float: left;
+   margin-right: auto;
+   
+
+}
+// Index styles
