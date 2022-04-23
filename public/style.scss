@@ -24,21 +24,18 @@ p {
 
 // Header-Icon-Shimmer-Stuff
 .header{    
+    padding-left: 1rem;
     font-family: $pacifico;
-    font-size: 5rem;
+    font-size: 4.25rem;
     color: $primary-color;
     position: absolute;
     left: 0;
-    top: 0;
-    background:
-    linear-gradient(-45deg, $highlight-color 40%, #fff 0 60%, $highlight-color 0) right/300% 100% no-repeat,
-    linear-gradient(-45deg, transparent 40%, $highlight-color 0 60%, transparent 0) right/300% 100% no-repeat;
-  -webkit-background-clip: text, padding-box;
-    background-clip: text, padding-box;
-    transition: 0.8s
+    top: 0.5%;
 }
 .header:hover {
-  background-position: left;
+  color: $highlight-color;
+
+  
 }
 // Navigation
 .corner-effect {
@@ -61,8 +58,9 @@ nav{
     
 }
 menu{
+    
     top: 3%;
-    right: 0;
+    right: 1%;
     position: absolute;
     float: right;
     font-size: 2.5rem;
@@ -160,6 +158,8 @@ menu-item .nav-links{
     margin-left: -60px;
     font-size: 1rem;
     font-family: $bebas;
+    opacity: 0;
+    transition: opacity 2s;
   }
   
   .tooltip .tooltiptext::after {
@@ -175,4 +175,5 @@ menu-item .nav-links{
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
+    opacity: 1;
   }
