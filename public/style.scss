@@ -5,76 +5,204 @@ body { line-height: 1;}
 ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
-table { border-collapse: collapse; border-spacing: 0;}
-//  ========= 
-$oxford-blue: rgb(16, 29, 66);
-$columbia-blue: rgb(188, 212, 222);
-$copper-rose: rgb(155, 106, 108);
-$skobeloff: rgb(15, 113, 115);
-$celadon-blue: rgb(0, 126, 167);
+table { border-collapse: collapse; border-spacing: 0;} 
+$background-color: #0B0C10;
+$secondary-color: #C5C6C7;
+$primary-color: #66FCF1;
+$highlight-color: #45A29E;
+$trimary-color: #1F2833;
 $simple-transition: all 0.5s ease-in-out;
+$bebas: 'Bebas Neue', cursive;
+$pacifico: 'Pacifico', cursive;
 body{
-    background-color: $columbia-blue;
+    background-color: $background-color;
+    font-family: $bebas;
+}
+p {
+    color: $secondary-color;
 }
 
-
-// Navigation
-.nav-logo{
-    font-weight: bold;
-    font-size: 60px;
-    color: $oxford-blue;
-    font-family: 'Square Peg', cursive;  
-    // -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-
-  }
-  .logo-hover:hover nav{
-        color: $celadon-blue;
-    }
-  .nav-logo span {
-      display: inline-block;
-      animation: nav-logo 1.2s infinite;
-      animation-delay: calc(.1s * var(--i));
-      
-  }
-  @keyframes nav-logo {
-    40%,100% {
-        transform: translateY(0)
-      }
-    20% {
-      transform: translateY(-5px)
-    }
-  }
-
-nav{
+// Header-Icon-Shimmer-Stuff
+.shimmer{
+    /* styling stuff */
+    font-family: $pacifico;
+    font-size: 5rem;
+    color: #ffffff1a;
+    position: absolute;
+    left: 0;
+    top: 0;
     
-    padding: 0 0.5rem 5rem;
-    border-radius: 1%;
-    margin-bottom: 1rem;
-    background-color: $skobeloff;
+}
+.shimmer {
+    /* the shimmer magic */
+    background: -webkit-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+    background: -moz-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+    background: gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+    -webkit-background-size: 125px 100%;
+    -moz-background-size: 125px 100%;
+    background-size: 125px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    -webkit-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+  }
+  
+  @-moz-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+  
+    100% {
+      background-position: top right;
+    }
+  }
+  
+  @-webkit-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+  
+    100% {
+      background-position: top right;
+    }
+  }
+  
+  @-o-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+  
+    100% {
+      background-position: top right;
+    }
+  }
+  
+  @-ms-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+  
+    100% {
+      background-position: top right;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+  
+    100% {
+      background-position: top right;
+    }
+  }
+// Navigation
+.corner-effect {
+    background:
+      linear-gradient($primary-color 0 0) 0 100%,
+      linear-gradient($primary-color 0 0) 0 100%,
+      linear-gradient($primary-color 0 0) 100% 0,
+      linear-gradient($primary-color 0 0) 100% 0;
+    background-size: 20px 3px, 3px 20px;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+  }
+  .corner-effect:hover {
+    background-position: 100% 100%, 0 0, 0 0, 100% 100%;
+  }
+nav{
+    padding: 3rem;
+    background-color: $background-color;
+    
 }
 menu{
-    margin-top: 1rem;
+    
     float: right;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     
 }
 menu-item .nav-links{
-    font-family: arial;
-    color: $oxford-blue;
+    
+    font-family: $bebas;
+    color: $primary-color;
     transition: $simple-transition;
     padding: 1rem;
     text-decoration: none;
     
 }
 .nav-links:hover{
-    color: $copper-rose;
-    
+    color: $highlight-color;
     
 }
-nav .nav-logo{
-   float: left;
-   margin-right: auto;
-   
-
+// Type-writer effect
+.typewriter-effect{
+    padding: 3rem;
+    color: $secondary-color;
+    font-size: 4rem;
+    margin-left: 40rem;
 }
-// Index styles
+.type {
+    display:inline-block;
+    
+  }
+  .type > span {
+    display: grid;
+    overflow: hidden;
+    height: 4rem;
+  }
+  .type span span {
+    width:0%;
+    max-width:max-content;
+    overflow: hidden;
+    height:inherit;
+    word-break:break-all;
+    animation:
+      c 1s infinite steps(1),  
+      t 2s linear infinite alternate,
+      m 12s steps(3) infinite;
+  }
+  .type span span:before {
+    content:" ";
+    display:inline-block;
+  }
+  @keyframes t{
+    90%,100% {width:100%}
+  }
+  @keyframes c{
+    0%,100%{box-shadow:5px 0 0 $background-color}
+    10%    {box-shadow:5px 0 0 $highlight-color  }
+  }
+  @keyframes m{
+    100% {transform:translateY(-300%)}
+  }
+// 
+.simple-line {
+    background: 
+        linear-gradient($highlight-color 0 0) 
+        bottom /var(--d, 100%) 3px 
+        no-repeat;
+    transition:1s;
+  }
+  .simple-line:hover {
+    --d: 20%;
+  }
+.intro{
+    text-align: center;
+    padding: 5rem;
+    font-size: 3rem;
+    cursor: default;
+}
