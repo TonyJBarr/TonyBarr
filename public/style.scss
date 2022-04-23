@@ -23,93 +23,23 @@ p {
 }
 
 // Header-Icon-Shimmer-Stuff
-.shimmer{
-    /* styling stuff */
+.header{    
     font-family: $pacifico;
     font-size: 5rem;
-    color: #ffffff1a;
+    color: $primary-color;
     position: absolute;
     left: 0;
     top: 0;
-    
+    background:
+    linear-gradient(-45deg, $highlight-color 40%, #fff 0 60%, $highlight-color 0) right/300% 100% no-repeat,
+    linear-gradient(-45deg, transparent 40%, $highlight-color 0 60%, transparent 0) right/300% 100% no-repeat;
+  -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.8s
 }
-.shimmer {
-    /* the shimmer magic */
-    background: -webkit-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
-    background: -moz-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
-    background: gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
-    -webkit-background-size: 125px 100%;
-    -moz-background-size: 125px 100%;
-    background-size: 125px 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-animation-name: shimmer;
-    -moz-animation-name: shimmer;
-    -webkit-animation-name: shimmer;
-    animation-name: shimmer;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-color: #222;
-  }
-  
-  @-moz-keyframes shimmer {
-    0% {
-      background-position: top left;
-    }
-  
-    100% {
-      background-position: top right;
-    }
-  }
-  
-  @-webkit-keyframes shimmer {
-    0% {
-      background-position: top left;
-    }
-  
-    100% {
-      background-position: top right;
-    }
-  }
-  
-  @-o-keyframes shimmer {
-    0% {
-      background-position: top left;
-    }
-  
-    100% {
-      background-position: top right;
-    }
-  }
-  
-  @-ms-keyframes shimmer {
-    0% {
-      background-position: top left;
-    }
-  
-    100% {
-      background-position: top right;
-    }
-  }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: top left;
-    }
-  
-    100% {
-      background-position: top right;
-    }
-  }
+.header:hover {
+  background-position: left;
+}
 // Navigation
 .corner-effect {
     background:
@@ -125,22 +55,24 @@ p {
     background-position: 100% 100%, 0 0, 0 0, 100% 100%;
   }
 nav{
+    
     padding: 3rem;
-    background-color: $background-color;
+    background-color: $trimary-color;
     
 }
 menu{
-    
+    top: 3%;
+    right: 0;
+    position: absolute;
     float: right;
     font-size: 2.5rem;
     
 }
 menu-item .nav-links{
-    
+    padding: 1rem;
     font-family: $bebas;
     color: $primary-color;
     transition: $simple-transition;
-    padding: 1rem;
     text-decoration: none;
     
 }
@@ -206,3 +138,41 @@ menu-item .nav-links{
     font-size: 3rem;
     cursor: default;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: $trimary-color;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 1rem;
+    font-family: $bebas;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent $primary-color transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

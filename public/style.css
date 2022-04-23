@@ -42,54 +42,23 @@ p {
   color: #C5C6C7;
 }
 
-.shimmer {
-  /* styling stuff */
+.header {
   font-family: "Pacifico", cursive;
   font-size: 5rem;
-  color: rgba(255, 255, 255, 0.1019607843);
+  color: #66FCF1;
   position: absolute;
   left: 0;
   top: 0;
+  background: linear-gradient(-45deg, #45A29E 40%, #fff 0 60%, #45A29E 0) right/300% 100% no-repeat, linear-gradient(-45deg, transparent 40%, #45A29E 0 60%, transparent 0) right/300% 100% no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.8s;
 }
 
-.shimmer {
-  /* the shimmer magic */
-  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background-size: 125px 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation-name: shimmer;
-  -webkit-animation-name: shimmer;
-  animation-name: shimmer;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-color: #222;
+.header:hover {
+  background-position: left;
 }
-@-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
+
 .corner-effect {
   background: linear-gradient(#66FCF1 0 0) 0 100%, linear-gradient(#66FCF1 0 0) 0 100%, linear-gradient(#66FCF1 0 0) 100% 0, linear-gradient(#66FCF1 0 0) 100% 0;
   background-size: 20px 3px, 3px 20px;
@@ -103,19 +72,22 @@ p {
 
 nav {
   padding: 3rem;
-  background-color: #0B0C10;
+  background-color: #1F2833;
 }
 
 menu {
+  top: 3%;
+  right: 0;
+  position: absolute;
   float: right;
   font-size: 2.5rem;
 }
 
 menu-item .nav-links {
+  padding: 1rem;
   font-family: "Bebas Neue", cursive;
   color: #66FCF1;
   transition: all 0.5s ease-in-out;
-  padding: 1rem;
   text-decoration: none;
 }
 
@@ -208,4 +180,41 @@ menu-item .nav-links {
   padding: 5rem;
   font-size: 3rem;
   cursor: default;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1F2833;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 1rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #66FCF1 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */
